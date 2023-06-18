@@ -1,0 +1,70 @@
+:root {
+  --main_color: #506e62;
+  --secondary_color: #d9e4de;
+  --font_main: #fff;
+  --font_secondary: #000;
+}
+.container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  color: var(--font_main);
+}
+.card {
+  width: 23%;
+  background: var(--main_color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: var(--font_secondary);
+}
+hr {
+  width: 100%;
+}
+.column {
+  height: 70vh;
+  overflow: auto;
+}
+.note {
+  width: 68%;
+  height: 25px;
+}
+button {
+  width: 26%;
+  height: 30px;
+}
+.card-body {
+  background-color: var(--secondary_color);
+  height: 152px;
+
+  margin: 10px;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.switch_container {
+  position: absolute;
+  left: 0;
+}
+.switch_container span {
+  width: 57px;
+  height: 31px;
+  display: inline-block;
+  background: #00abff78;
+  border-radius: 34px;
+  position: absolute;
+  top: 0;
+  background-image: linear-gradient(337deg, white, transparent);
+  bottom: 0;
+  cursor: pointer;
+}
+#mylist div {
+  background: white;
+  width: 86%;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  align-items: center;
+}
