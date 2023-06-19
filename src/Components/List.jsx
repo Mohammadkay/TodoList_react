@@ -1,3 +1,4 @@
+import Add from "./Add";
 import "./list.css";
 import React, { useEffect, useState } from "react";
 
@@ -9,39 +10,16 @@ function List() {
       return [];
     }
   });
-  let temp = "";
+
   let tempEdit = "";
 
   useEffect(() => {
     localStorage.setItem("ToDO", JSON.stringify(toDo));
   }, [toDo]);
 
-  function add() {
-    let count = 1;
-    if (localStorage.getItem("count") >= 1) {
-      count = localStorage.getItem("count");
-      count++;
-      localStorage.setItem("count", count);
-    } else {
-      localStorage.setItem("count", count);
-      count++;
-    }
-
-    let newToDO = [
-      ...toDo,
-      {
-        id: count,
-        title: temp,
-        isEditable: false
-      }
-    ];
-    setToDo(newToDO);
-    localStorage.setItem("ToDO", JSON.stringify(newToDO));
-  }
-
   function Delete(e) {
     setToDo(toDo.filter((ele) => ele.id !== e));
-    localStorage.setItem("ToDO", JSON.stringify(toDo));
+
   }
   function handleEdit(item) {
     const updatedToDo = toDo.map((e) => {
@@ -110,16 +88,7 @@ function List() {
           })}
         </div>
         <div>
-          <input
-            id="ToDo"
-            className="note"
-            type="text"
-            placeholder="Enter your Note here"
-            onChange={(e) => {
-              temp = e.target.value;
-            }}
-          />
-          <button onClick={add}>Add</button>
+          <Add toDo={toDo} setToDo={setToDo} />
         </div>
       </div>
     </div>
